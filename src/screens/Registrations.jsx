@@ -150,7 +150,7 @@ const Registrations = () => {
                 <label
                   key={idx}
                   className="checkbox-option"
-                  style={{ color: "#fff", fontSize: "14.9px" }} // Inline CSS for white color and 14.9px font size
+                  /*style={{ color: "#fff", fontSize: "14.9px" }}*/ // Inline CSS for white color and 14.9px font size
                 >
                   <input
                     type="checkbox"
@@ -167,7 +167,7 @@ const Registrations = () => {
                 <label
                   key={idx}
                   className="radio-option"
-                  style={{ color: "#fff", fontSize: "14.9px" }} // Inline CSS for white color and 14.9px font size
+                  /*style={{ color: "#fff", fontSize: "14.9px" }}*/ // Inline CSS for white color and 14.9px font size
                 >
                   <input
                     type="radio"

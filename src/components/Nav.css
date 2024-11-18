@@ -86,7 +86,7 @@ header {
 }
 
 .nav a.active {
-  color: #ffc23c;
+  color:  #a70e46;
 }
 
 /* Responsive styling */
@@ -130,7 +130,7 @@ header {
     font-size: 1.5rem;
     color: #ffffff;
     padding: 5px 10px;
-    border: 1px solid #ffd700;
+    border: 1px solid  #a70e46;
     border-radius: 5px;
     margin-top: 5px;
   }
@@ -138,6 +138,6 @@ header {
 
 /* Optional hover effect for menu icon */
 .menu-toggle:hover {
-  background-color: #ffd700;
+  background-color:  #a70e46;
   color: black;
 }

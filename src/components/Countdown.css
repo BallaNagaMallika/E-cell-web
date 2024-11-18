@@ -24,12 +24,12 @@
   border-radius: 50%;
   margin-bottom: 1rem;
   background: rgba(0, 0, 0, 0.8); /* Slight transparency for the circle */
-  box-shadow: 0 0 15px rgba(255, 194, 60, 0.9);
+  box-shadow: 0 0 15px rgba(167, 14, 70, 1);
 }
 
 /* Centered text within the countdown circle */
 .countdown-time {
-  color: #ffc23c; /* Neon yellow-orange color */
+  color: #a70e46; /* Neon yellow-orange color */
   font-size: 2rem;
   font-weight: bold;
   z-index: 1;
@@ -46,7 +46,7 @@
 
 .progress-ring__circle {
   fill: transparent;
-  stroke: #ffc23c; /* Neon yellow-orange color */
+  stroke: #a70e46; /* Neon yellow-orange color */
   stroke-width: 5;
   stroke-dasharray: 283;
   stroke-dashoffset: calc(283 - (283 * var(--progress)) / 100);

@@ -40,14 +40,14 @@
   font-size: 30px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #ffce00;
+  color: #a70e46;
   letter-spacing: 2px;
 }
 
 .close-button {
   background: none;
   border: none;
-  color: #ffce00;
+  color: #a70e46;
   font-size: 22px;
   cursor: pointer;
   position: absolute;
@@ -67,7 +67,7 @@
 
 .form-group label {
   font-weight: 600;
-  color: #ffce00;
+  color: #a70e46;
   display: block;
   margin-bottom: 8px;
   font-size: 19px;
@@ -98,15 +98,16 @@ input[type="date"]:focus,
 input[type="time"]:focus,
 textarea:focus,
 select:focus {
-  border-color: #ffce00;
-  box-shadow: 0 0 8px rgba(255, 206, 0, 0.8); /* Subtle glow */
+  border-color: #a70e46;
+  box-shadow: 0 0 8px rgba(209, 183, 209, 0.5); /* Subtle glow */
   outline: none;
 }
 
 /* Checkboxes and Radio Buttons */
+/* Common Styling for Inputs */
 input[type="radio"],
 input[type="checkbox"] {
-  accent-color: #ffce00;
+  accent-color: #a70e46;
   margin-right: 8px;
 }
 
@@ -122,35 +123,203 @@ input[type="checkbox"] {
 
 .checkbox-option:hover label,
 .radio-option:hover label {
-  color: #ffce00; /* Gold hover for labels */
+  color: #a70e46; /* Gold hover for labels */
 }
 
-/* Submit Button */
-.submit-button {
-  width: 100%;
-  padding: 16px;
-  background: linear-gradient(90deg, #ffce00, #ff9800); /* Modern gradient */
-  color: #000;
-  font-weight: 700;
-  border: none;
-  border-radius: 12px;
-  font-size: 18px;
-  text-transform: uppercase;
+/* Hide the default checkbox and radio button */
+.checkbox-input {
+  display: none;
+}
+
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkmark {
+  position: relative;
+  height: 1.3em;
+  width: 1.3em;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.3em;
+  transition: all 0.25s;
+  --spread: 50px;
+}
+
+/* Change the checkmark appearance when checked */
+.checkbox-input:checked ~ .checkmark {
+  background-color: #000000;
+  box-shadow: -10px -10px var(--spread) 0px rgb(17, 0, 248),
+    0 -10px var(--spread) 0px rgb(243, 11, 243),
+    10px -10px var(--spread) 0px rgb(253, 228, 0),
+    10px 0 var(--spread) 0px rgb(107, 255, 21),
+    10px 10px var(--spread) 0px rgb(76, 0, 255),
+    0 10px var(--spread) 0px rgb(255, 196, 0),
+    -10px 10px var(--spread) 0px rgb(90, 105, 240);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  transform: rotate(0deg);
+  border: 0.1em solid rgba(0, 0, 0, 0.863);
+  left: 0;
+  top: 0;
+  width: 1.1em;
+  height: 1.1em;
+  border-radius: 0.25em;
+  transition: all 0.25s, border-width 0.1s;
+}
+
+/* Show the checkmark when checked */
+.checkbox-input:checked ~ .checkmark:after {
+  left: 0.45em;
+  top: 0.25em;
+  width: 0.25em;
+  height: 0.5em;
+  border-color: rgba(238, 238, 238, 0) white white #fff0;
+  border-width: 0 0.15em 0.15em 0;
+  border-radius: 0em;
+  transform: rotate(45deg);
+}
+
+/* Radio button design */
+.label {
+  display: flex;
+  align-items: center;
+  border-radius: 12px; /* Adjusted for round corners */
+  padding: 14px 16px;
+  margin: 5px 0;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  transition: 0.3s;
+  border: 2px solid hsl(0, 0%, 80%); /* Border added around the radio button */
+}
+
+.label:hover,
+.label:focus-within,
+.label:active {
+  background: hsla(0, 0%, 80%, 0.14);
+  border-color: hsl(0, 0%, 60%); /* Change border color on hover/active */
+}
+
+.radio-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  z-index: -1;
+}
+
+.radio-design {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%; /* Fully rounded border */
+  background: linear-gradient(to right bottom, hsl(154, 97%, 62%), hsl(225, 97%, 62%));
+  position: relative;
+  margin-right: 12px; /* Space between radio button and label text */
+}
+
+.radio-design::before {
+  content: '';
+  display: inline-block;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  background: hsl(0, 0%, 90%);
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+.radio-input:checked + .radio-design::before {
+  transform: scale(0);
+}
+
+.label-text {
+  color: hsl(0, 0%, 60%);
+  margin-left: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 900;
+  transition: 0.3s;
+}
+
+.radio-input:checked ~ .label-text {
+  color: hsl(0, 0%, 40%);
+}
+
+.form-container {
+  margin: 20px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-button {
+  font-size: 17px;
+  background: transparent;
+  border: 2px solid rgba(255, 237, 211, 0.5); /* Transparent box with light border */
+  padding: 1em; /* Maintain height with equal top and bottom padding */
+  width: 150px; /* Reduce width */
+  color: #ffedd3;
+  text-transform: uppercase;
+  position: relative;
+  transition: 0.5s ease;
+  cursor: pointer;
+  overflow: hidden; /* Prevent content spill during hover animations */
+  text-align: center; /* Ensure text stays centered */
+  margin-left: 40%;
+}
+
+.submit-button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #af82ac; /* Yellow underline */
+  transition: 0.5s ease;
 }
 
 .submit-button:hover {
-  background: linear-gradient(90deg, #ff9800, #ffce00); /* Reverse gradient */
-  transform: translateY(-3px); /* Subtle lift */
-  box-shadow: 0 8px 20px rgba(255, 152, 0, 0.5); /* Orange glow */
+  color: #1e1e2b; /* Text color changes on hover */
+  background: linear-gradient(90deg, #af82ac, #a70e46); /* Gradient background */
+  transform: translateY(-3px); /* Subtle lift effect */
+  box-shadow: 0 8px 20px rgba(209, 183, 209, 0.5); /* Glow effect */
+  border: none; /* Remove border upon hover for cleaner appearance */
+}
+
+.submit-button:hover::before {
+  width: 100%; /* Expand yellow underline */
+}
+
+.submit-button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #a70e46; 
+  transition: 0.4s ease;
+  z-index: -1; 
+}
+
+.submit-button:hover::after {
+  height: 100%; /* Expand yellow background */
+  transition-delay: 0.4s;
 }
 
 /* Team Member Section */
 .team-config-container h3 {
   font-size: 22px;
   font-weight: bold;
-  color: #ffce00;
+  color: #a70e46;
   margin-bottom: 15px;
   text-align: center;
   text-transform: uppercase;
@@ -166,7 +335,7 @@ input[type="checkbox"] {
 
 .team-member-container h4 {
   font-size: 18px;
-  color: #ffce00;
+  color: #a70e46;
   margin-bottom: 10px;
 }
 

@@ -21,7 +21,7 @@
 /* Title */
 .registrations-table-container h2 {
   text-align: center;
-  color: #ffce00;
+  color: #a70e46;
   font-size: 26px;
   font-weight: 700;
   text-transform: uppercase;
@@ -30,8 +30,8 @@
 
 /* Export Button */
 .export-button {
-  background-color: #ffce00;
-  color: #000;
+  background-color: #a70e46;
+  color: #a7a7a7;
   font-size: 16px;
   padding: 10px 20px;
   border: none;
@@ -43,7 +43,7 @@
 }
 
 .export-button:hover {
-  background-color: #f4a200;
+  background-color:#a70e46;
 }
 
 /* Table */
@@ -61,8 +61,8 @@
 }
 
 .registrations-table th {
-  background-color: #ffce00;
-  color: #000;
+  background-color: #a70e46;
+  color: #a7a7a7;
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -78,7 +78,7 @@
 
 /* Team Member Details Styling */
 .toggle-member-details {
-  background: #ffce00;
+  background: #a70e46;
   color: #000;
   font-size: 14px;
   font-weight: bold;
@@ -92,7 +92,7 @@
 }
 
 .toggle-member-details:hover {
-  background-color: #f4a200;
+  background-color:#a70e46;
   transform: translateY(-2px);
 }
 
@@ -122,19 +122,19 @@
 .member-details-list li {
   font-size: 14px;
   margin: 5px 0;
-  color: #f5f5f5;
+  color: #a7a7a7;
   display: flex;
   align-items: center;
 }
 
 .member-details-list li strong {
-  color: #ffce00;
+  color: #a70e46;
   font-weight: bold;
   margin-right: 8px;
 }
 
 .member-details-list li span {
-  color: #f5f5f5;
+  color: #a7a7a7;
 }
 
 /* Nested Details */
@@ -143,7 +143,7 @@
   color: #ddd;
   margin-top: 5px;
   margin-left: 20px;
-  border-left: 2px solid #ffce00;
+  border-left: 2px solid #a70e46;
   padding-left: 10px;
 }
 

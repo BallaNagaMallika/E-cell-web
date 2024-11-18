@@ -5,7 +5,7 @@
 }
 
 .form-builder-container h2 {
-  color: #ffd700; /* Yellow/orange color for headers */
+  color: #a70e46; /* Yellow/orange color for headers */
   margin-bottom: 20px;
 }
 
@@ -22,7 +22,7 @@
   top: -12px; /* Adjust as needed to position outside the border */
   left: 15px; /* Adjust alignment */
   background-color: #000;
-  color: #ffd700; /* Yellow/orange color */
+  color: #a70e46; /* Yellow/orange color */
   font-weight: bold;
   padding: 0 8px;
   border-radius: 5px;
@@ -92,12 +92,12 @@
   border-radius: 8px;
   cursor: pointer;
   background: none;
-  color: #ffd700;
-  border: 1px dashed #ffd700;
+  color: #a70e46;
+  border: 1px dashed #a70e46;
 }
 
 .add-question-button:hover {
-  background-color: #ffd700;
+  background-color: #a70e46;
   color: #000;
 }
 
@@ -116,7 +116,7 @@
 
 .submit-button {
   padding: 10px 20px;
-  background-color: #ffd700; /* Yellow/orange */
+  background-color: #a70e46; /* Yellow/orange */
   color: #000; /* Black text */
   border: none;
   cursor: pointer;
@@ -139,7 +139,7 @@
 }
 
 .team-config-container h3 {
-  color: #ffd700;
+  color: #a70e46;
   margin-bottom: 10px;
 }
 
